@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Clinet{% endblock %}
+
+{% block body %}
+    <h1>Create new Clinet</h1>
+
+    {{ include('clinet/_form.html.twig') }}
+
+    <a href="{{ path('app_clinet_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Resto{% endblock %}
+
+{% block body %}
+    <h1>Resto</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ resto.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ resto.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ resto.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ resto.tel }}</td>
+            </tr>
+            <tr>
+                <th>Fax</th>
+                <td>{{ resto.fax }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ resto.ville }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_resto_index') }}">back to list</a>
+
+    <a href="{{ path('app_resto_edit', {'id': resto.id}) }}">edit</a>
+
+    {{ include('resto/_delete_form.html.twig') }}
+{% endblock %}

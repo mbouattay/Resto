@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Clinet{% endblock %}
+
+{% block body %}
+    <h1>Edit Clinet</h1>
+
+    {{ include('clinet/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_clinet_index') }}">back to list</a>
+
+    {{ include('clinet/_delete_form.html.twig') }}
+{% endblock %}

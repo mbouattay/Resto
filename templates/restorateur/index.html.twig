@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restorateur index{% endblock %}
+
+{% block body %}
+    <h1>Restorateur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Code_TVA</th>
+                <th>Cin</th>
+                <th>Adresse</th>
+                <th>Tel</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for restorateur in restorateurs %}
+            <tr>
+                <td>{{ restorateur.id }}</td>
+                <td>{{ restorateur.nom }}</td>
+                <td>{{ restorateur.prenom }}</td>
+                <td>{{ restorateur.username }}</td>
+                <td>{{ restorateur.password }}</td>
+                <td>{{ restorateur.codeTVA }}</td>
+                <td>{{ restorateur.cin }}</td>
+                <td>{{ restorateur.adresse }}</td>
+                <td>{{ restorateur.tel }}</td>
+                <td>
+                    <a href="{{ path('app_restorateur_show', {'id': restorateur.id}) }}">show</a>
+                    <a href="{{ path('app_restorateur_edit', {'id': restorateur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_restorateur_new') }}">Create new</a>
+{% endblock %}

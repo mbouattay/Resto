@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clinet index{% endblock %}
+
+{% block body %}
+    <h1>Clinet index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Password</th>
+                <th>Tel</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for clinet in clinets %}
+            <tr>
+                <td>{{ clinet.id }}</td>
+                <td>{{ clinet.username }}</td>
+                <td>{{ clinet.nom }}</td>
+                <td>{{ clinet.prenom }}</td>
+                <td>{{ clinet.password }}</td>
+                <td>{{ clinet.tel }}</td>
+                <td>
+                    <a href="{{ path('app_clinet_show', {'id': clinet.id}) }}">show</a>
+                    <a href="{{ path('app_clinet_edit', {'id': clinet.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_clinet_new') }}">Create new</a>
+{% endblock %}

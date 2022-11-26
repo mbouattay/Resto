@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Restorateur{% endblock %}
+
+{% block body %}
+    <h1>Create new Restorateur</h1>
+
+    {{ include('restorateur/_form.html.twig') }}
+
+    <a href="{{ path('app_restorateur_index') }}">back to list</a>
+{% endblock %}
